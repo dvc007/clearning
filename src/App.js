@@ -5,6 +5,7 @@ import HomePage from './Pages/HomePage/HomePage';
 import NotFoundPage from './NotFoundPage/NotFoundPage';
 import Layout from './HOC/Layout';
 import RegisterPage from './Pages/RegisterPage/RegisterPage';
+import CourseByCategory from './Pages/CourseByCategory.js/CourseByCategory.js';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
           <Route path='/' element={<Layout><HomePage /></Layout>} />
+          <Route path='/khoahoc/:maDanhMuc' element={<Layout><CourseByCategory /></Layout>} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

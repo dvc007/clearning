@@ -6,3 +6,4 @@ export let postLogin = (data) => {
 export let postRegister = (xxxx) => {
     return https.post('/api/QuanLyNguoiDung/DangKy', xxxx)
 }
+

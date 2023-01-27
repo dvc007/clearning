@@ -1,19 +1,29 @@
-import React from 'react'
-export default function CourseList({ course }) {
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import { getCourseByCategory } from '../../service/CategoryService';
+
+export default function CourseByCategory() {
+
+    let params = useParams()
+    // console.log("params", params);
+    // console.log("Danh Muc", params.maDanhMuc);
+    const [CourseByCategory, setCourseByCategory] = useState([])
+    useEffect(() => {
+        getCourseByCategory(params.maDanhMuc)
+            .then((result) => {
+                console.log(result);
+                setCourseByCategory(result.data)
+            }).catch((err) => {
+                console.log(err);
+            });
+    }, [])
+
 
     let renderCourseList = () => {
-        return course?.slice(0, 8).map((item, index) => {
+        return CourseByCategory?.slice(0, 8).map((item, index) => {
             return (
-                // <Card
-                //     hoverable
-                //     style={{
-                //         width: 240,
-                //     }}
-                //     cover={<img className='pt-6 h-96 object-cover' alt="example" src={item.hinhAnh} />}
-                // >
-                //     <Meta title={item.tenKhoaHoc} description={item.biDanh} />
-                // </Card>
                 <div className=''>
+
                     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img className="p-8 rounded-t-lg pt-6 h-96 object-cover" src={item.hinhAnh} alt="product image" />
@@ -38,6 +48,8 @@ export default function CourseList({ course }) {
         })
     }
     return (
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>{renderCourseList()}</div>
+        <>  <h1 className='pl-4 h-20 bg-slate-400 flex items-center   '>{params.maDanhMuc}</h1>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>{renderCourseList()}</div>
+        </>
     )
 }
