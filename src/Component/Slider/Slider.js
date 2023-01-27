@@ -5,7 +5,7 @@ import MovingComponent from 'react-moving-text'
 
 export default function Slider() {
     return (
-        <div className='grid w-screen h-3/6 grid-cols-2 mt-2 pt-2 bg-red'>
+        <div className='grid w-full h-3/6 grid-cols-2 mt-2 pt-2 bg-red'>
             <div className='mt-28'>
                 <div class="flex justify-center">
                     <div class="block p-10 rounded-lg shadow-lg bg-white max-w-sm">

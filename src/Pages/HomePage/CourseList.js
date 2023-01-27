@@ -4,15 +4,6 @@ export default function CourseList({ course }) {
     let renderCourseList = () => {
         return course?.slice(0, 8).map((item, index) => {
             return (
-                // <Card
-                //     hoverable
-                //     style={{
-                //         width: 240,
-                //     }}
-                //     cover={<img className='pt-6 h-96 object-cover' alt="example" src={item.hinhAnh} />}
-                // >
-                //     <Meta title={item.tenKhoaHoc} description={item.biDanh} />
-                // </Card>
                 <div className=''>
                     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
