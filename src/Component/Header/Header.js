@@ -3,10 +3,6 @@ import UserNav from './UserNav';
 import { getCategoryCourse } from './../../service/CategoryService';
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
-
-
-
-
 export default function Header() {
     const [category, setcategory] = useState([])
     useEffect(() => {
@@ -49,7 +45,7 @@ export default function Header() {
         //     <UserNav />
         // </div>
         <div>
-            <div className='w-full pt-11 mt-11'>
+            <div className='w-full  pt-11 mt-11'>
                 <nav className="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
                     <div className="container flex flex-wrap items-center justify-between mx-auto">
                         <a href="#" className="flex items-center">
