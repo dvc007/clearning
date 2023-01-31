@@ -22,7 +22,7 @@ export default function LoginPage() {
             }).catch((err) => {
                 console.log(err);
             });
-        console.log('Success:', values);
+        // console.log('Success:', values);
     };
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);

@@ -7,3 +7,7 @@ export let postRegister = (xxxx) => {
     return https.post('/api/QuanLyNguoiDung/DangKy', xxxx)
 }
 
+export let putUser = () => {
+    return https.put('/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung')
+}
+
