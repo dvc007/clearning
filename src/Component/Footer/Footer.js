@@ -2,98 +2,122 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div>
-      <footer className="p-4 bg-white sm:p-6 dark:bg-gray-900">
-        <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
-            <a href="https://flowbite.com/" className="flex items-center">
-              <img
-                src="https://flowbite.com/docs/images/logo.svg"
-                className="h-8 mr-3"
-                alt="FlowBite Logo"
-              />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Flowbite
-              </span>
-            </a>
+    <div className="mt-5">
+      <footer className="bg-white dark:bg-gray-900">
+        <div className="grid grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
+          <div>
+            <h2 className="mb-6 text-sm font-semibold text-black-500 uppercase dark:text-black-400">
+              Company
+            </h2>
+            <ul className="text-gray-500 dark:text-gray-400">
+              <li className="mb-4">
+                <a href="/#" className=" hover:underline">
+                  About
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Careers
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Brand Center
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Blog
+                </a>
+              </li>
+            </ul>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Về C-learning
-              </h2>
-              <ul className="text-gray-600 dark:text-gray-400">
-                <li className="mb-4">
-                  <a href="https://flowbite.com/" className="hover:underline">
-                    Giới thiệu về C-learning
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
-                    Chính sách bảo mật
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Hợp tác liên kết
-              </h2>
-              <ul className="text-gray-600 dark:text-gray-400">
-                <li className="mb-4">
-                  <a
-                    href="https://github.com/themesberg/flowbite"
-                    className="hover:underline "
-                  >
-                    Đăng ký giảng viên
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://discord.gg/4eeurUVvTy"
-                    className="hover:underline"
-                  >
-                    Đào tạo doanh nghiệp
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Mua Hàng
-              </h2>
-              <ul className="text-gray-600 dark:text-gray-400">
-                <li className="mb-4">
-                  <a href="/#" className="hover:underline">
-                    Hướng dẫn mua hàng
-                  </a>
-                </li>
-                <li>
-                  <a href="/#" className="hover:underline">
-                    Danh sách khóa học
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <div>
+            <h2 className="mb-6 text-sm font-semibold text-black-500 uppercase dark:text-black-400">
+              Help center
+            </h2>
+            <ul className="text-gray-500 dark:text-gray-400">
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Discord Server
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Twitter
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Facebook
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="mb-6 text-sm font-semibold text-black-500 uppercase dark:text-black-400">
+              Legal
+            </h2>
+            <ul className="text-gray-500 dark:text-gray-400">
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Privacy Policy
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Licensing
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Terms &amp; Conditions
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="mb-6 text-sm font-semibold text-black-500 uppercase dark:text-black-400">
+              Download
+            </h2>
+            <ul className="text-gray-500 dark:text-gray-400">
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  iOS
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Android
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  Windows
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="/#" className="hover:underline">
+                  MacOS
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2023{" "}
-            <a href="https://flowbite.com/" className="hover:underline">
-              MuaKhoaHoc.com{" "}
-            </a>
-            Design. All rights reserved. Điều khoản & chính sách , Quyền riêng
-            tư & bảo mật
+        <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+          <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+            © 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights
+            Reserved.
           </span>
-          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+          <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
             <a
               href="/#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
                 className="w-5 h-5"
@@ -111,7 +135,7 @@ export default function Footer() {
             </a>
             <a
               href="/#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
                 className="w-5 h-5"
@@ -129,7 +153,7 @@ export default function Footer() {
             </a>
             <a
               href="/#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
                 className="w-5 h-5"
@@ -143,7 +167,7 @@ export default function Footer() {
             </a>
             <a
               href="/#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
                 className="w-5 h-5"
@@ -161,7 +185,7 @@ export default function Footer() {
             </a>
             <a
               href="/#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
                 className="w-5 h-5"
@@ -175,7 +199,7 @@ export default function Footer() {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="sr-only">Dribbbel account</span>
+              <span className="sr-only">Dribbble account</span>
             </a>
           </div>
         </div>

@@ -11,6 +11,7 @@ import SearchCourse from "./Pages/SearchCourse/SearchCourse";
 import Courses from "./Pages/Courses/Courses";
 import EventLandingPage from "./Pages/EventLandingPage/EventLandingPage";
 import "flowbite";
+import About from "./Pages/About/About";
 function App() {
   return (
     <>
@@ -47,6 +48,14 @@ function App() {
             element={
               <Layout>
                 <HomePage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <Layout>
+                <About />
               </Layout>
             }
           />
