@@ -9,6 +9,7 @@ import CourseByCategory from "./Pages/CourseByCategory.js/CourseByCategory.js";
 import InfoCourse from "./Pages/InfoCourse/InfoCourse";
 import SearchCourse from "./Pages/SearchCourse/SearchCourse";
 import Courses from "./Pages/Courses/Courses";
+import EventLandingPage from "./Pages/EventLandingPage/EventLandingPage";
 
 function App() {
   return (
@@ -32,7 +33,14 @@ function App() {
               </Layout>
             }
           />
-
+          <Route
+            path="/event"
+            element={
+              <Layout>
+                <EventLandingPage />
+              </Layout>
+            }
+          />
           <Route path="/register" element={<RegisterPage />} />
           <Route
             path="/"
