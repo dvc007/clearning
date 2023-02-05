@@ -10,7 +10,7 @@ import InfoCourse from "./Pages/InfoCourse/InfoCourse";
 import SearchCourse from "./Pages/SearchCourse/SearchCourse";
 import Courses from "./Pages/Courses/Courses";
 import EventLandingPage from "./Pages/EventLandingPage/EventLandingPage";
-
+import "flowbite";
 function App() {
   return (
     <>
@@ -69,6 +69,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
+      <script src="../path/to/flowbite/dist/flowbite.min.js"></script>;
     </>
   );
 }
