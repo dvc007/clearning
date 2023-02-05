@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Slider from "../../Component/Slider/Slider";
+import CourseList from "./../HomePage/CourseList";
 import { getCourse } from "./../../service/CourseService";
-import CourseList from "./CourseList";
 
-export default function HomePage() {
+export default function Courses() {
   const [course, setCourse] = useState([]);
   useEffect(() => {
     getCourse()
       .then((result) => {
-        // console.log(result.data);
+        console.log(result.data);
         setCourse(result.data);
       })
       .catch((err) => {
@@ -17,12 +16,8 @@ export default function HomePage() {
   }, []);
   return (
     <div>
-      <div>
-        <Slider />
-      </div>
-      <div>
-        <CourseList course={course} />
-      </div>
+      <h1>Danh sách khóa học phổ biến</h1>
+      <CourseList course={course} />
     </div>
   );
 }
