@@ -17,7 +17,7 @@ import Load from "./Component/Load/Load";
 function App() {
   return (
     <>
-      <Load />
+      {/* <Load /> */}
       <BrowserRouter>
         <Routes>
           <Route
