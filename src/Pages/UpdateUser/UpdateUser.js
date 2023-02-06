@@ -3,8 +3,11 @@ import { putUser } from "./../../service/userService";
 import { Button, Form, Input, message, Select, Tabs } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { AndroidOutlined, AppleOutlined } from "@ant-design/icons";
 import MyCourse from "./MyCourse";
+const onChange = (key) => {
+  console.log(key);
+};
+
 const { Option } = Select;
 const formItemLayout = {
   labelCol: {
@@ -70,9 +73,8 @@ export default function UpdateUser() {
       });
     console.log("Value ", values);
   };
-
-  return (
-    <div>
+  const formX = () => {
+    return (
       <div className="flex justify-center items-center">
         <Form
           initialValues={user}
@@ -200,28 +202,26 @@ export default function UpdateUser() {
           </Form.Item>
         </Form>
       </div>
+    );
+  };
 
-      <div>
-        <MyCourse />
-      </div>
+  const items = [
+    {
+      key: "1",
+      label: `Thông Tin Cá Nhân`,
+      children: formX(),
+    },
+    {
+      key: "2",
+      label: `Khóa Học Của Tôi`,
+      children: <MyCourse />,
+    },
+  ];
 
+  return (
+    <div>
       <div>
-        <Tabs
-          defaultActiveKey="2"
-          items={[AppleOutlined, AndroidOutlined].map((Icon, i) => {
-            const id = String(i + 1);
-            return {
-              label: (
-                <span>
-                  <Icon />
-                  Tab {id}
-                </span>
-              ),
-              key: id,
-              children: `Tab ${id}`,
-            };
-          })}
-        />
+        <Tabs defaultActiveKey="2" items={items} onChange={onChange} />
       </div>
     </div>
   );
