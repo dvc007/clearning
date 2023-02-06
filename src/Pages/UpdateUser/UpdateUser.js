@@ -4,6 +4,7 @@ import { Button, Form, Input, message, Select, Tabs } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AndroidOutlined, AppleOutlined } from "@ant-design/icons";
+import MyCourse from "./MyCourse";
 const { Option } = Select;
 const formItemLayout = {
   labelCol: {
@@ -198,6 +199,10 @@ export default function UpdateUser() {
             </Button>
           </Form.Item>
         </Form>
+      </div>
+
+      <div>
+        <MyCourse />
       </div>
 
       <div>
