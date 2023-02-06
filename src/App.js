@@ -13,9 +13,11 @@ import EventLandingPage from "./Pages/EventLandingPage/EventLandingPage";
 import "flowbite";
 import About from "./Pages/About/About";
 import UpdateUser from "./Pages/UpdateUser/UpdateUser";
+import Load from "./Component/Load/Load";
 function App() {
   return (
     <>
+      <Load />
       <BrowserRouter>
         <Routes>
           <Route

@@ -3,6 +3,8 @@ import { userLocalService } from "../service/localService";
 
 const initialState = {
   user: userLocalService.get(),
+  userFind: "",
+  courseFind: "",
 };
 
 const userSlice = createSlice({
@@ -12,8 +14,14 @@ const userSlice = createSlice({
     setUserInfo: (state, action) => {
       state.user = action.payload;
     },
+    setUserFind: (state, action) => {
+      state.userFind = action.payload;
+    },
+    setCourseFind: (state, action) => {
+      state.courseFind = action.payload;
+    },
   },
 });
 
-export const { setUserInfo } = userSlice.actions;
+export const { setUserInfo, setUserFind, setCourseFind } = userSlice.actions;
 export default userSlice.reducer;
