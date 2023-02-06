@@ -1,11 +1,9 @@
 import React from "react";
 import { putUser } from "./../../service/userService";
-import { useDispatch } from "react-redux";
-import { userLocalService } from "../../service/localService";
-import { Button, Form, Input, message, Select } from "antd";
-import { setUserInfo } from "../../redux_toolkit/userSlice";
+import { Button, Form, Input, message, Select, Tabs } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { AndroidOutlined, AppleOutlined } from "@ant-design/icons";
 const { Option } = Select;
 const formItemLayout = {
   labelCol: {
@@ -38,6 +36,8 @@ const tailFormItemLayout = {
   },
 };
 export default function UpdateUser() {
+  //form tabs
+  //form update info
   const [form] = Form.useForm();
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -50,19 +50,16 @@ export default function UpdateUser() {
       </Select>
     </Form.Item>
   );
-  let dispatch = useDispatch();
   let navigate = useNavigate();
   let user = useSelector((state) => {
     return state.userSlice.user;
   });
-  console.log("UserACC:", user.taiKhoan);
+  // console.log("UserACC:", user.taiKhoan);
   const onFinish = (values) => {
     putUser(values)
       .then((result) => {
         message.success("Đã cập nhật thành công");
         console.log(result);
-        // dispatch(setUserInfo(user));
-        // userLocalService.set(user);
         navigate("/login");
       })
 
@@ -201,6 +198,25 @@ export default function UpdateUser() {
             </Button>
           </Form.Item>
         </Form>
+      </div>
+
+      <div>
+        <Tabs
+          defaultActiveKey="2"
+          items={[AppleOutlined, AndroidOutlined].map((Icon, i) => {
+            const id = String(i + 1);
+            return {
+              label: (
+                <span>
+                  <Icon />
+                  Tab {id}
+                </span>
+              ),
+              key: id,
+              children: `Tab ${id}`,
+            };
+          })}
+        />
       </div>
     </div>
   );
