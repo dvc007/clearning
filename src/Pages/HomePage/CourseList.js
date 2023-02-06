@@ -10,7 +10,7 @@ export default function CourseList({ course }) {
     return course?.slice(0, 8).map((item, index) => {
       let axiosArr = {
         maKhoaHoc: item.maKhoaHoc,
-        taiKhoan: user.taiKhoan,
+        taiKhoan: user?.taiKhoan,
       };
       return (
         <div className="" key={index}>
