@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getInforCourse } from "../../service/CategoryService";
+import { getInforCourse } from "../../service/CourseService";
 import CourseList from "../HomePage/CourseList";
 import { getCourse } from "./../../service/CourseService";
 import { NavLink } from "react-router-dom";

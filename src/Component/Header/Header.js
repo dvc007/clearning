@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import UserNav from "./UserNav";
-import { getCategoryCourse } from "./../../service/CategoryService";
+import { getCategoryCourse } from "./../../service/CourseService";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space, Input } from "antd";
 import { AudioOutlined } from "@ant-design/icons";
