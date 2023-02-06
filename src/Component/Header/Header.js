@@ -27,7 +27,6 @@ export default function Header() {
   useEffect(() => {
     getCategoryCourse()
       .then((result) => {
-        // console.log(result);
         setcategory(result.data);
       })
       .catch((err) => {

@@ -174,6 +174,20 @@ export default function RegisterPage() {
               <Option value="GP01">GP01</Option>
             </Select>
           </Form.Item>
+          <Form.Item
+            name="maLoaiNguoiDung"
+            label="Mã Loại Người Dùng "
+            rules={[
+              {
+                required: true,
+                message: "Vui lòng chọn mã nhóm!",
+              },
+            ]}
+          >
+            <Select placeholder="Chọn mã người dùng của bạn">
+              <Option value="HV">HV</Option>
+            </Select>
+          </Form.Item>
 
           <Form.Item {...tailFormItemLayout}>
             <Button type="dashed" htmlType="submit">

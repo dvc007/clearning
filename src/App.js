@@ -12,6 +12,7 @@ import Courses from "./Pages/Courses/Courses";
 import EventLandingPage from "./Pages/EventLandingPage/EventLandingPage";
 import "flowbite";
 import About from "./Pages/About/About";
+import UpdateUser from "./Pages/UpdateUser/UpdateUser";
 function App() {
   return (
     <>
@@ -51,6 +52,8 @@ function App() {
               </Layout>
             }
           />
+          <Route path="/capnhat" element={<UpdateUser />} />
+
           <Route
             path="/about"
             element={
