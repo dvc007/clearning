@@ -17,7 +17,7 @@ export const userColums = [
     key: "email",
   },
   {
-    title: "Loai Nguoi Dung",
+    title: "Loại Người Dùng",
     dataIndex: "maLoaiNguoiDung",
     key: "maLoaiNguoiDung",
     render: (text) => {

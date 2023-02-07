@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Form, Input, message, Select } from "antd";
 import { postAddUser } from "./../../../service/amindService";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setUserInfo } from "../../../redux_toolkit/userSlice";
 import { userLocalService } from "../../../service/localService";
@@ -40,21 +40,8 @@ const tailFormItemLayout = {
 };
 export default function AddUserPage() {
   const [form] = Form.useForm();
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="84">+84</Option>
-      </Select>
-    </Form.Item>
-  );
-
   let dispatch = useDispatch();
   let navigate = useNavigate();
-
   const onFinish = (values) => {
     console.log("values", values);
     postAddUser(values)

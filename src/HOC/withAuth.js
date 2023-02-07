@@ -4,7 +4,7 @@ import { userLocalService } from "./../service/localService";
 const withAuth = (WrappedComponent) => {
   function WithAuth() {
     useEffect(() => {
-      if (userLocalService.get()?.maLoaiNguoiDung !== "HV")
+      if (userLocalService.get()?.maLoaiNguoiDung !== "GV")
         window.location.href = "/";
     }, []);
     return <WrappedComponent />;
