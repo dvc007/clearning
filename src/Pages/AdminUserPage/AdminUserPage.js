@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
 import ListUserPage from "./ListUserPage/ListUserPage";
+import ListCourseUserPage from "./ListCourseUserPage/ListCourseUserPage";
 
 const { Header, Sider, Content } = Layout;
 function AdminUserPage() {
@@ -68,6 +69,7 @@ function AdminUserPage() {
           </Content>
         </Layout>
       </Layout>
+      <ListCourseUserPage />
     </div>
   );
 }

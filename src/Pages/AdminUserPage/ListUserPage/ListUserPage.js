@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, message } from "antd";
 import { deleteUser, getUserList } from "./../../../service/amindService";
-import { userColums } from "./../utils";
+import { userColums } from "./utilsUser";
 export default function ListUserPage() {
   const [userArr, setUserArr] = useState([]);
   useEffect(() => {
