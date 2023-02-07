@@ -1,0 +1,44 @@
+import { Tag } from "antd";
+
+export const userColums = [
+  {
+    title: "Họ Tên",
+    dataIndex: "hoTen",
+    key: "hoTen",
+  },
+  {
+    title: "Tài Khoản",
+    dataIndex: "taiKhoan",
+    key: "taiKhoan",
+  },
+  {
+    title: "Email",
+    dataIndex: "email",
+    key: "email",
+  },
+  {
+    title: "Loai Nguoi Dung",
+    dataIndex: "maLoaiNguoiDung",
+    key: "maLoaiNguoiDung",
+    render: (text) => {
+      if (text === "GV") {
+        return (
+          <>
+            <Tag className="text-red-500">{text}</Tag>
+          </>
+        );
+      } else {
+        return (
+          <>
+            <Tag className="text-blue-500">{text}</Tag>
+          </>
+        );
+      }
+    },
+  },
+  {
+    title: "Hành Động",
+    dataIndex: "hanhDong",
+    key: "hanhDong",
+  },
+];
