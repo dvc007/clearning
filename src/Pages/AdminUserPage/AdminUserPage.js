@@ -17,12 +17,23 @@ function AdminUserPage() {
     token: { colorBgContainer },
   } = theme.useToken();
 
+  const [page, setPage] = useState(<ListUserPage />);
+
   return (
     <div>
       <Layout>
         <Sider trigger={null} collapsible collapsed={collapsed}>
           <div className="logo" />
           <Menu
+            onClick={(items) => {
+              if (items.key == 1) {
+                console.log("1");
+                setPage(<ListUserPage />);
+              } else {
+                console.log("2");
+                setPage(<ListCourseUserPage />);
+              }
+            }}
             theme="dark"
             mode="inline"
             defaultSelectedKeys={["1"]}
@@ -38,7 +49,6 @@ function AdminUserPage() {
                 label: "Quản Lý Khóa Học",
               },
             ]}
-            onClick={() => {}}
           />
         </Sider>
         <Layout className="site-layout">
@@ -65,11 +75,10 @@ function AdminUserPage() {
               background: colorBgContainer,
             }}
           >
-            <ListUserPage />
+            {page}
           </Content>
         </Layout>
       </Layout>
-      <ListCourseUserPage />
     </div>
   );
 }

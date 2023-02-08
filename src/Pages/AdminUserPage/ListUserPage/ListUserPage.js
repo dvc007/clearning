@@ -9,9 +9,9 @@ export default function ListUserPage() {
       const handleRemoveUser = (account) => {
         deleteUser(account)
           .then((result) => {
-            message.success("Xóa thành công");
+            message.success("Xóa Thành Công");
             fetchUserList();
-            console.log(result);
+            // console.log(result);
           })
           .catch((err) => {
             message.error("Thất bại");
@@ -71,7 +71,6 @@ export default function ListUserPage() {
           Thêm Người Dùng Mới
         </a>
       </div>
-
       <Table columns={userColums} dataSource={userArr} />
     </div>
   );
