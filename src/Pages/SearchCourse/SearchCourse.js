@@ -5,10 +5,6 @@ import { getSearchCourse } from "./../../service/CourseService";
 
 export default function SearchCourse() {
   let params = useParams();
-  //   let stringCourse = params.tenKhoaHoc;
-  //   const onSearch = (value: stringCourse) => {
-  //     window.location.href = `/search/${value}`;
-  //   };
   const [searchcourser, setSearchCourser] = useState([]);
   useEffect(() => {
     getSearchCourse(params.tenKhoaHoc)
@@ -57,7 +53,6 @@ export default function SearchCourse() {
                 <span className="text-3xl font-bold text-gray-900 dark:text-white">
                   399.000<sup>đ</sup>
                 </span>
-                {/* <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a> */}
               </div>
               <div className="">
                 <button

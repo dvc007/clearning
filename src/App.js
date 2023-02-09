@@ -17,6 +17,7 @@ import UpdateUser from "./Pages/UpdateUser/UpdateUser";
 import AdminUserPage from "./Pages/AdminUserPage/AdminUserPage";
 import AddUserPage from "./Pages/AdminUserPage/AddUserPage/AddUserPage";
 import ListCourseUserPage from "./Pages/AdminUserPage/ListCourseUserPage/ListCourseUserPage";
+import UpdateUserPage from "./Pages/AdminUserPage/UpdateUserPage/UpdateUserPage";
 function App() {
   return (
     <>
@@ -88,6 +89,10 @@ function App() {
           <Route path="/admin" element={<AdminUserPage />} />
           <Route path="/admin/list" element={<ListCourseUserPage />} />
           <Route path="/admin/adduser" element={<AddUserPage />} />
+          <Route
+            path="/admin/updateuser/:taiKhoan"
+            element={<UpdateUserPage />}
+          />
           {/* <Route path="/admin/delete/:taiKhoan" element={<AdminUserPage />} /> */}
         </Routes>
       </BrowserRouter>

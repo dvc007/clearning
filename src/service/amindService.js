@@ -16,3 +16,7 @@ export const deleteUser = (datadelete) => {
     `/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${datadelete}`
   );
 };
+//cap nhat nguoi dung
+export const putUpdateUser = (dataupdate) => {
+  return https.put("/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung", dataupdate);
+};

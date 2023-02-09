@@ -1,4 +1,5 @@
 export const USER_LOCAL = "USER_LOCAL";
+export const USER_ADMIN = "USER_ADMIN";
 export const userLocalService = {
   get: () => {
     let userJson = localStorage.getItem(USER_LOCAL);
@@ -16,5 +17,24 @@ export const userLocalService = {
 
   remove: () => {
     localStorage.removeItem(USER_LOCAL);
+  },
+};
+
+export const userLocalAdmin = {
+  get: () => {
+    let userJsonAdmin = localStorage.getItem(USER_ADMIN);
+    if (userJsonAdmin) {
+      return JSON.parse(userJsonAdmin);
+    } else {
+      return [];
+    }
+  },
+  set: (data) => {
+    let userJsonAdmin = JSON.stringify(data);
+    localStorage.setItem(USER_ADMIN, userJsonAdmin);
+  },
+
+  remove: () => {
+    localStorage.removeItem(USER_ADMIN);
   },
 };
