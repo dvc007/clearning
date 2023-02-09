@@ -29,11 +29,11 @@ export default function LoginPage() {
     console.log("Failed:", errorInfo);
   };
   return (
-    <div className="grid w-full grid-cols-2 ">
-      <div>
+    <div className="flex justify-around gap-x-3">
+      <div className="w-2/5">
         <Lottie animationData={groovyWalkAnimation} />
       </div>
-      <div className="mt-28">
+      <div className="flex items-center mr-60 ">
         <Form
           name="basic"
           labelCol={{

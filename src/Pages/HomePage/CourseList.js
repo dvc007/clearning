@@ -1,6 +1,6 @@
 import React from "react";
 import { postRegisterCourse } from "./../../service/CourseService";
-import { message, Alert, Space } from "antd";
+import { message, Alert } from "antd";
 import { useSelector } from "react-redux";
 export default function CourseList({ course }) {
   let user = useSelector((state) => {
@@ -16,7 +16,7 @@ export default function CourseList({ course }) {
         <div className="" key={index}>
           <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <img
-              className="p-8 rounded-t-lg pt-6 h-96 object-cover"
+              className="p-8 rounded-t-lg pt-6 h-60 object-cover"
               src={item.hinhAnh}
               alt="product"
             />
@@ -45,12 +45,12 @@ export default function CourseList({ course }) {
                   399.000<sup>đ</sup>
                 </span>
               </div>
-              <div className="">
+              <div>
                 <button
                   onClick={() => {
                     window.location.href = `/detail/${item.maKhoaHoc}`;
                   }}
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5  py-2  text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Xem Chi Tiết
                 </button>
@@ -70,7 +70,7 @@ export default function CourseList({ course }) {
                         />;
                       });
                   }}
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5  py-2 mx-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Dang Ky
                 </button>
@@ -82,7 +82,7 @@ export default function CourseList({ course }) {
     });
   };
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {renderCourseList()}
     </div>
   );

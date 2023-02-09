@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { message } from "antd";
 import React, { useEffect, useState } from "react";
 import { getSearchCourse } from "./../../service/CourseService";
+import { useSelector } from "react-redux";
+import { postRegisterCourse } from "./../../service/CourseService";
 
 export default function SearchCourse() {
   let params = useParams();
@@ -17,9 +19,16 @@ export default function SearchCourse() {
         console.log(err);
       });
   }, [params.tenKhoaHoc]);
+  let user = useSelector((state) => {
+    return state.userSlice.user;
+  });
   return (
     <div>
       {searchcourser.map((item, index) => {
+        let axiosArr = {
+          maKhoaHoc: item.maKhoaHoc,
+          taiKhoan: user?.taiKhoan,
+        };
         return (
           <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="/#">
@@ -65,7 +74,13 @@ export default function SearchCourse() {
                 </button>
                 <button
                   onClick={() => {
-                    window.location.href = "/register";
+                    postRegisterCourse(axiosArr)
+                      .then((result) => {
+                        message.success("Đăng Ký Khóa Học Thành Công");
+                      })
+                      .catch((err) => {
+                        message.err("Khóa Học Này Đã Đăng Ký");
+                      });
                   }}
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5  py-2 mx-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
                 >
