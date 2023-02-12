@@ -14,7 +14,7 @@ export default function CourseList({ course }) {
       };
       return (
         <div className="" key={index}>
-          <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div className="container max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <img
               className="p-8 rounded-t-lg pt-6 h-60 object-cover"
               src={item.hinhAnh}
