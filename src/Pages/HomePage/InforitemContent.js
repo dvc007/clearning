@@ -3,7 +3,7 @@ import React from "react";
 export default function InforitemContent() {
   return (
     <div>
-      <div className="overflow-y-hidden container">
+      <div className="overflow-y-hidden container shadow-xl shadow-blue-50">
         <div className="xl:mx-auto xl:container  xl:px-20 md:px-6 px-4 py-12">
           <div className="lg:flex items-center justify-center lg:space-x-12 2xl:space-x-6">
             <div className>

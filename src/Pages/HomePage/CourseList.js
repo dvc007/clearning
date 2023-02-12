@@ -82,8 +82,12 @@ export default function CourseList({ course }) {
     });
   };
   return (
-    <div className="grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {renderCourseList()}
+    <div>
+      <h1 className="text-2xl font-bold uppercase m-6">khóa học phổ biến</h1>
+
+      <div className="grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+        {renderCourseList()}
+      </div>
     </div>
   );
 }

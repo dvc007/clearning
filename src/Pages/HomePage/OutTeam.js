@@ -25,14 +25,14 @@ export default function OutTeam() {
               </a>
               <div className="p-5">
                 <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  <a href="#">Bonnie Green</a>
+                  <a href="#">Nguyễn Tất Vinh</a>
                 </h3>
                 <span className="text-gray-500 dark:text-gray-400">
                   CEO &amp; Web Developer
                 </span>
                 <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
-                  Bonnie drives the technical strategy of the flowbite platform
-                  and brand.
+                  Lập trình viên không đơn thuần chỉ là một coder giỏi mà còn
+                  phải có tư duy như một Designer
                 </p>
                 <ul className="flex space-x-4 sm:mt-0">
                   <li>
@@ -120,12 +120,12 @@ export default function OutTeam() {
               </a>
               <div className="p-5">
                 <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  <a href="#">Jese Leos</a>
+                  <a href="#">Đào Văn Châu</a>
                 </h3>
                 <span className="text-gray-500 dark:text-gray-400">CTO</span>
                 <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
-                  Jese drives the technical strategy of the flowbite platform
-                  and brand.
+                  Lập trình viên không đơn thuần chỉ là một coder giỏi mà còn
+                  phải có tư duy như một Designer
                 </p>
                 <ul className="flex space-x-4 sm:mt-0">
                   <li>
@@ -213,14 +213,14 @@ export default function OutTeam() {
               </a>
               <div className="p-5">
                 <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  <a href="#">Michael Gough</a>
+                  <a href="#">Lâm Tấn Phát</a>
                 </h3>
                 <span className="text-gray-500 dark:text-gray-400">
                   Senior Front-end Developer
                 </span>
                 <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
-                  Michael drives the technical strategy of the flowbite platform
-                  and brand.
+                  Lập trình viên không đơn thuần chỉ là một coder giỏi mà còn
+                  phải có tư duy như một Designer
                 </p>
                 <ul className="flex space-x-4 sm:mt-0">
                   <li>
@@ -308,14 +308,14 @@ export default function OutTeam() {
               </a>
               <div className="p-5">
                 <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  <a href="#">Lana Byrd</a>
+                  <a href="#">Lê Thanh Kiều</a>
                 </h3>
                 <span className="text-gray-500 dark:text-gray-400">
                   Marketing &amp; Sale
                 </span>
                 <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">
-                  Lana drives the technical strategy of the flowbite platform
-                  and brand.
+                  Lập trình viên không đơn thuần chỉ là một coder giỏi mà còn
+                  phải có tư duy như một Designer
                 </p>
                 <ul className="flex space-x-4 sm:mt-0">
                   <li>
