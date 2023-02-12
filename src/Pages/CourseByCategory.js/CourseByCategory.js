@@ -60,10 +60,10 @@ export default function CourseByCategory() {
   return (
     <>
       {" "}
-      <h1 className="pl-4 h-20 bg-slate-400 flex items-center   ">
+      <h1 className="pl-4 h-20 bg-green-100 flex items-center   ">
         {params.maDanhMuc}
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-3">
         {renderCourseList()}
       </div>
     </>

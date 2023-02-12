@@ -34,13 +34,13 @@ export default function InfoCourse() {
 
   let renderCourseList = () => {
     return (
-      <div className="grid grid-cols-3 gap-4 h-3/5 bg-slate-700 ">
+      <div className="grid grid-cols-3 gap-4 h-3/5 bg-slate-100 ">
         <div className="col-span-2 ">
-          <div>
-            <h1 className="text-3xl">{biDanh}</h1>
+          <div className="mt-3">
+            <h1 className="text-3xl font-bold uppercase">{biDanh}</h1>
             <p>(OFFLINE + ONLINE TƯƠNG TÁC CÓ RECORD)</p>
           </div>
-          <div>
+          <div className="my-3">
             Đã có hơn 6200 bạn đăng kí học và có việc làm thông qua chương trình
             đào tạo Bootcamp Lập trình Front End chuyên nghiệp từ Zero tại
             Elearning. Khóa học 100% thực hành cường độ cao theodự án thực tế và
@@ -52,7 +52,7 @@ export default function InfoCourse() {
 
           <div className="grid grid-cols-2 gap-5">
             <div>
-              <h3>AI CÓ THỂ THAM GIA ?</h3>
+              <h3 className="my-1 font-bold">AI CÓ THỂ THAM GIA ?</h3>
               <div>
                 <p className="flex">
                   <span>
@@ -178,7 +178,7 @@ export default function InfoCourse() {
               </div>
             </div>
             <div>
-              <h3>HỌC XONG LÀM VIỆC TẠI ĐÂU ?</h3>
+              <h3 className="my-1 font-bold">HỌC XONG LÀM VIỆC TẠI ĐÂU ?</h3>
               <div>
                 <p className="flex">
                   <span>
@@ -307,7 +307,7 @@ export default function InfoCourse() {
           </div>
 
           <div>
-            <h2>Đầu ra khóa học</h2>
+            <h2 className="mt-3 font-bold">ĐẦU RA KHÓA HỌC</h2>
             <div>
               <p className="flex">
                 <span>
@@ -437,8 +437,8 @@ export default function InfoCourse() {
             </div>
           </div>
 
-          <div>
-            <h2>MỤC 1: GIỚI THIỆU</h2>
+          <div className="my-3">
+            <h2 className="mt-3 font-bold">MỤC 1: GIỚI THIỆU</h2>
             <div className="">
               <div>
                 <div className="flex justify-between">
@@ -626,7 +626,7 @@ export default function InfoCourse() {
                 </div>
               </div>
             </div>
-            <h2>MỤC 2: KIẾN THỨC CĂN BẢN</h2>
+            <h2 className="mt-3 font-bold">MỤC 2: KIẾN THỨC CĂN BẢN</h2>
             <div>
               <div className="flex justify-between">
                 <div className="icon-right">
@@ -853,7 +853,7 @@ export default function InfoCourse() {
                 </div>
               </div>
             </div>
-            <h2>MỤC 3: KIẾN THỨC CHUYÊN SÂU</h2>
+            <h2 className="mt-3 font-bold">MỤC 3: KIẾN THỨC CHUYÊN SÂU</h2>
             <div>
               <div className="flex justify-between">
                 <div className="icon-right">
@@ -993,8 +993,54 @@ export default function InfoCourse() {
           </div>
         </div>
         <div className="">
-          <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <NavLink to="/#">
+          <div className="w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+              <img
+                className="p-8 rounded-t-lg pt-6 h-96 object-cover"
+                src={hinhAnh}
+                alt="product"
+              />
+            </a>
+            <div className="p-5 mt-6">
+              <a href="/# ">
+                <h5 className="text-2xl font-bold  tracking-tight uppercase text-gray-900 dark:text-white">
+                  {biDanh}
+                </h5>
+              </a>
+
+              <a
+                href="/#"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-6"
+              >
+                Đăng Ký
+                <svg
+                  aria-hidden="true"
+                  className="w-4 h-4 ml-2 -mr-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
+              <p class="text-xl mt-6  dark:text-white">
+                Ghi danh: 25 học viên{" "}
+              </p>
+              <p class="text-xl mt-6  dark:text-white">Thời gian: 20 giờ</p>
+              <p class="text-xl mt-6  dark:text-white">Bài học: 22</p>
+              <p class="text-xl mt-6  dark:text-white">Video: 98</p>
+              <p class="text-xl mt-6  dark:text-white">
+                Trình độ: Người mới học
+              </p>
+            </div>
+          </div>
+
+          {/* <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <NavLink to="//#">
               <img
                 className="p-8 rounded-t-lg pt-6 h-96 object-cover"
                 src={hinhAnh}
@@ -1027,16 +1073,16 @@ export default function InfoCourse() {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );
   };
   return (
     <>
-      <div className="">{renderCourseList()}</div>
-      <div>
-        <h1 className="py-5">Khóa Học Phổ Biến</h1>
+      <div className="bg-slate-100">{renderCourseList()}</div>
+      <div className="my-5 ">
+        <h1 className="my-5 text-2xl font-bold">Khóa Học Phổ Biến</h1>
         <CourseList course={course} />
       </div>
     </>
