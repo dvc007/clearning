@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 export default function CountNumber() {
   return (
     <div className="">
-      <div className="mx-auto container  my-20 lg:mt-48 lg:mb-24 ">
+      <div className="mx-auto h-full w-full  my-20 lg:mt-28 lg:mb-18 bg-green-100">
         <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           <div className="flex justify-center w-full lg:border-r border-gray-300 py-6">
             <svg

@@ -20,21 +20,11 @@ export default function HomePage() {
   }, []);
   return (
     <div>
-      <div>
-        <Slider />
-      </div>
-      <div>
-        <InforitemContent />
-      </div>
-      <div className="bg-red-400">
-        <CourseList course={course} />
-      </div>
-      <div className="bg-slate-300">
-        <CountNumber />
-      </div>
-      <div>
-        <OutTeam />
-      </div>
+      <Slider />
+      <InforitemContent />
+      <CourseList course={course} />
+      <CountNumber />
+      <OutTeam />
     </div>
   );
 }
