@@ -5,6 +5,8 @@ import CourseList from "./CourseList";
 import CountNumber from "./CountNumber";
 import InforitemContent from "./InforitemContent";
 import OutTeam from "./OutTeam";
+import ListBackEnd from "./ListBackEnd";
+import ListFrontEnd from "./ListFrontEnd";
 
 export default function HomePage() {
   const [course, setCourse] = useState([]);
@@ -23,6 +25,8 @@ export default function HomePage() {
       <Slider />
       <InforitemContent />
       <CourseList course={course} />
+      <ListBackEnd />
+      <ListFrontEnd />
       <CountNumber />
       <OutTeam />
     </div>
