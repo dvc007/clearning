@@ -3,7 +3,10 @@ import React from "react";
 export default function Footer() {
   return (
     <>
-      <div className="mx-auto  w-full h-full xl:px-20 lg:px-12 sm:px-6  px-4 py-12 bg-slate-100">
+      <div
+        className="mx-auto 
+             bottom-0 xl:px-20 lg:px-12 sm:px-6  px-4 py-12 bg-slate-100"
+      >
         <div className="flex flex-col items-center justify-center">
           <div>
             <svg
