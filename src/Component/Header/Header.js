@@ -68,8 +68,8 @@ export default function Header() {
               <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                 C-Learning
               </span>
-              <div className="px-3">
-                <form>
+              {/* <div className="px-3 ">
+                <form className="">
                   <label
                     htmlFor="default-search"
                     className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -105,7 +105,7 @@ export default function Header() {
                     </div>
                   </div>
                 </form>
-              </div>
+              </div> */}
             </a>
             <div className="flex md:order-2 ">
               <UserNav />
