@@ -27,7 +27,9 @@ export default function ListBackEnd() {
             <div className="px-5 pb-5">
               <a href={`/detail/${item.maKhoaHoc}`}>
                 <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  {item.tenKhoaHoc}
+                  {item.tenKhoaHoc.length > 20
+                    ? item.tenKhoaHoc.substring(0, 20) + "..."
+                    : item.tenKhoaHoc}
                 </h5>
               </a>
               <div className="flex items-center mt-2.5 mb-5">
