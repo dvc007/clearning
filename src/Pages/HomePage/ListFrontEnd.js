@@ -17,7 +17,7 @@ export default function ListFrontEnd() {
   let renderCourseList = () => {
     return CourseByCategory?.slice(0, 4).map((item, index) => {
       return (
-        <div className="h-96 " key={index}>
+        <div className="" key={index}>
           <div className="container max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <img
               className="p-8 rounded-t-lg pt-6 h-60 object-cover"
@@ -27,8 +27,8 @@ export default function ListFrontEnd() {
             <div className="px-5 pb-5">
               <a href={`/detail/${item.maKhoaHoc}`}>
                 <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  {item.tenKhoaHoc.length > 30
-                    ? item.tenKhoaHoc.substring(0, 30) + "..."
+                  {item.tenKhoaHoc.length > 15
+                    ? item.tenKhoaHoc.substring(0, 15) + "..."
                     : item.tenKhoaHoc}
                 </h5>
               </a>

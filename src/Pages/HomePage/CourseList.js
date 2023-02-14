@@ -8,7 +8,7 @@ export default function CourseList({ course }) {
     return state.userSlice.user;
   });
   let renderCourseList = () => {
-    return course?.slice(0, 4).map((item, index) => {
+    return course?.slice(0, 8).map((item, index) => {
       let axiosArr = {
         maKhoaHoc: item.maKhoaHoc,
         taiKhoan: user?.taiKhoan,
@@ -24,8 +24,8 @@ export default function CourseList({ course }) {
             <div className="px-5 pb-5">
               <a href={`/detail/${item.maKhoaHoc}`}>
                 <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  {item.tenKhoaHoc.length > 30
-                    ? item.tenKhoaHoc.substring(0, 30) + "..."
+                  {item.tenKhoaHoc.length > 15
+                    ? item.tenKhoaHoc.substring(0, 15) + "..."
                     : item.tenKhoaHoc}
                 </h5>
               </a>
