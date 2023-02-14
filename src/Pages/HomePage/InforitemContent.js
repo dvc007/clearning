@@ -1,11 +1,12 @@
 import React from "react";
-
+import { Fade } from "react-awesome-reveal";
 export default function InforitemContent() {
   return (
     <div>
       <div className="overflow-y-hidden container shadow-xl shadow-blue-50">
         <div className="xl:mx-auto xl:container  xl:px-20 md:px-6 px-4 py-12">
           <div className="lg:flex items-center justify-center lg:space-x-12 2xl:space-x-6">
+            {/* <Fade duration={2000} triggerOnce direction="left"> */}
             <div className>
               <p className="lg:text-4xl text-3xl font-extrabold leading-9 text-gray-800">
                 Tại sao lại chọn C-learning
@@ -112,6 +113,7 @@ export default function InforitemContent() {
                 className="w-full obejct-fit object-center object-fill h-full"
               />
             </div>
+            {/* </Fade> */}
           </div>
         </div>
       </div>

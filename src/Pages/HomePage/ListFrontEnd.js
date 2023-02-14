@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCourseByCategoryFontend } from "./../../service/CourseService";
+import { Fade } from "react-awesome-reveal";
 
 export default function ListFrontEnd() {
   const [CourseByCategory, setCourseByCategory] = useState([]);
@@ -69,7 +70,9 @@ export default function ListFrontEnd() {
       <h1 className="text-2xl font-bold uppercase m-6">Khóa học Front End</h1>
 
       <div className="grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {renderCourseList()}
+        <Fade duration={1000} triggerOnce direction="right">
+          {renderCourseList()}
+        </Fade>
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCourseByCategoryBackEnd } from "../../service/CourseService";
+import { Fade } from "react-awesome-reveal";
 
 export default function ListBackEnd() {
   const [CourseByCategory, setCourseByCategory] = useState([]);
@@ -69,7 +70,9 @@ export default function ListBackEnd() {
       <h1 className="text-2xl font-bold uppercase m-6">Khóa học Back End</h1>
 
       <div className="grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {renderCourseList()}
+        <Fade duration={1000} triggerOnce direction="left">
+          {renderCourseList()}
+        </Fade>
       </div>
     </>
   );
