@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { getInforCourse } from "../../service/CourseService";
 import CourseList from "../HomePage/CourseList";
 import { getCourse } from "./../../service/CourseService";
-import { NavLink } from "react-router-dom";
 
 export default function InfoCourse() {
   let params = useParams();
@@ -994,7 +993,7 @@ export default function InfoCourse() {
         </div>
         <div className="">
           <div className="w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
+            <a href="/#">
               <img
                 className="p-8 rounded-t-lg pt-6 h-96 object-cover"
                 src={hinhAnh}

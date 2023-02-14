@@ -2,27 +2,9 @@ import React, { useEffect, useState } from "react";
 import UserNav from "./UserNav";
 import { getCategoryCourse } from "./../../service/CourseService";
 import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Space, Input } from "antd";
-import { AudioOutlined } from "@ant-design/icons";
-import { useParams } from "react-router-dom";
+import { Dropdown, Space } from "antd";
 
 export default function Header() {
-  const { Search } = Input;
-  const suffix = (
-    <AudioOutlined
-      style={{
-        fontSize: 16,
-        color: "#1890ff",
-      }}
-    />
-  );
-
-  let params = useParams();
-  let stringCourse = params.tenKhoaHoc;
-  const onSearch = (value: stringCourse) => {
-    window.location.href = `/search/${value}`;
-  };
-
   const [category, setcategory] = useState([]);
   useEffect(() => {
     getCategoryCourse()
@@ -171,7 +153,7 @@ export default function Header() {
                     href="/event"
                     className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
-                    SỰ KIỆN
+                    BLOG
                   </a>
                 </li>
                 <li>

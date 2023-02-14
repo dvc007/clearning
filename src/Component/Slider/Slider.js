@@ -2,7 +2,7 @@ import React from "react";
 import Lottie from "lottie-react";
 import groovyWalkAnimation from "../../assets/53882-distance-education.json";
 import MovingComponent from "react-moving-text";
-import { Slide, JackInTheBox, Roll, Rotate, Zoom } from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
 export default function Slider() {
   return (
     <Slide

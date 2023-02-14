@@ -1,18 +1,8 @@
 import React from "react";
-import { postRegisterCourse } from "./../../service/CourseService";
-import { message, Alert } from "antd";
-import { useSelector } from "react-redux";
 import { Fade } from "react-awesome-reveal";
 export default function CourseList({ course }) {
-  let user = useSelector((state) => {
-    return state.userSlice.user;
-  });
   let renderCourseList = () => {
     return course?.slice(0, 8).map((item, index) => {
-      let axiosArr = {
-        maKhoaHoc: item.maKhoaHoc,
-        taiKhoan: user?.taiKhoan,
-      };
       return (
         <div className="" key={index}>
           <div className="container max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
