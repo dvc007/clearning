@@ -17,7 +17,7 @@ export default function ListBackEnd() {
   let renderCourseList = () => {
     return CourseByCategory?.slice(0, 4).map((item, index) => {
       return (
-        <div className="" key={index}>
+        <div className="container" key={index}>
           <div className="container max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <img
               className="p-8 rounded-t-lg pt-6 h-60 object-cover"
@@ -69,9 +69,9 @@ export default function ListBackEnd() {
   };
   return (
     <>
-      <h1 className="text-2xl font-bold uppercase m-6">Khóa học Back End</h1>
+      <h1 className="container text-2xl font-bold uppercase m-6">Khóa học Back End</h1>
 
-      <div className="grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="container grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <Fade duration={1000} triggerOnce direction="left">
           {renderCourseList()}
         </Fade>

@@ -7,7 +7,6 @@ import InforitemContent from "./InforitemContent";
 import OutTeam from "./OutTeam";
 import ListBackEnd from "./ListBackEnd";
 import ListFrontEnd from "./ListFrontEnd";
-import Contect from "./Contect";
 
 export default function HomePage() {
   const [course, setCourse] = useState([]);
