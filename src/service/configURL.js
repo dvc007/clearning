@@ -12,38 +12,3 @@ export const https = axios.create({
   },
 });
 
-// //loading
-// // Add a request interceptor
-// https.interceptors.request.use(
-//   function (config) {
-//     // Do something before request is sent
-//     store_toolkit.dispatch(setLoadingOn());
-//     console.log("start");
-//     return config;
-//   },
-//   function (error) {
-//     store_toolkit.dispatch(setLoadingOff());
-
-//     // Do something with request error
-//     return Promise.reject(error);
-//   }
-// );
-
-// // Add a response interceptor
-// https.interceptors.response.use(
-//   function (response) {
-//     store_toolkit.dispatch(setLoadingOff());
-//     console.log("off");
-
-//     // Any status code that lie within the range of 2xx cause this function to trigger
-//     // Do something with response data
-//     return response;
-//   },
-//   function (error) {
-//     store_toolkit.dispatch(setLoadingOff());
-
-//     // Any status codes that falls outside the range of 2xx cause this function to trigger
-//     // Do something with response error
-//     return Promise.reject(error);
-//   }
-// );

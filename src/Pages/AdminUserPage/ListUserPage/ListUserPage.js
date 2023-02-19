@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Table, message } from "antd";
 import { deleteUser, getUserList } from "./../../../service/amindService";
 import { userColums } from "./utilsUser";
-import { useSelector } from "react-redux";
 import { userLocalAdmin } from "./../../../service/localService";
 export default function ListUserPage({ arrListUserC }) {
-  let user = useSelector((state) => {
-    return state.userSlice.user;
-  });
   const UserUpdate = userLocalAdmin.get();
   console.log("xx", UserUpdate);
   const [userArr, setUserArr] = useState([]);
@@ -40,15 +36,6 @@ export default function ListUserPage({ arrListUserC }) {
       getUserList()
         .then((result) => {
           let userList = result.data.map((item) => {
-            let arrListUserC = {
-              taiKhoan: item.taiKhoan,
-              matKhau: item.matKhau,
-              hoTen: item.hoTen,
-              soDT: item.soDT,
-              maLoaiNguoiDung: item.maLoaiNguoiDung,
-              maNhom: item.maNhom,
-              email: item.email,
-            };
             return {
               ...item,
               key: item.taiKhoan,
