@@ -1,7 +1,7 @@
 import axios from "axios";
 import { userLocalService } from "./localService";
-// import { store_toolkit } from "./../index";
-// import { setLoadingOff, setLoadingOn } from "../redux_toolkit/spinnerSlice";
+import { store_toolkit } from "./../index";
+import { setLoadingOff, setLoadingOn } from "../redux_toolkit/loadingSlice";
 
 export const https = axios.create({
   baseURL: "https://elearningnew.cybersoft.edu.vn",
@@ -12,3 +12,35 @@ export const https = axios.create({
   },
 });
 
+// Add a request interceptor
+https.interceptors.request.use(
+  function (config) {
+    // Do something before request is sent
+    store_toolkit.dispatch(setLoadingOn());
+    return config;
+  },
+  function (error) {
+    store_toolkit.dispatch(setLoadingOff());
+
+    // Do something with request error
+    return Promise.reject(error);
+  }
+);
+
+// Add a response interceptor
+https.interceptors.response.use(
+  function (response) {
+    store_toolkit.dispatch(setLoadingOff());
+
+    // Any status code that lie within the range of 2xx cause this function to trigger
+    // Do something with response data
+    return response;
+  },
+  function (error) {
+    store_toolkit.dispatch(setLoadingOff());
+
+    // Any status codes that falls outside the range of 2xx cause this function to trigger
+    // Do something with response error
+    return Promise.reject(error);
+  }
+);

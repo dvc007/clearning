@@ -18,10 +18,11 @@ import AdminUserPage from "./Pages/AdminUserPage/AdminUserPage";
 import AddUserPage from "./Pages/AdminUserPage/AddUserPage/AddUserPage";
 import ListCourseUserPage from "./Pages/AdminUserPage/ListCourseUserPage/ListCourseUserPage";
 import UpdateUserPage from "./Pages/AdminUserPage/UpdateUserPage/UpdateUserPage";
+import Loading from "./Component/Loading/Loading";
 function App() {
   return (
     <>
-      {/* <Load /> */}
+      <Loading />
       <BrowserRouter>
         <Routes>
           <Route
