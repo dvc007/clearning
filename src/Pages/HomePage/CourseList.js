@@ -1,6 +1,12 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
+import { postRegisterCourse } from "./../../service/CourseService";
+import { message } from "antd";
+import { useSelector } from "react-redux";
 export default function CourseList({ course }) {
+  let user = useSelector((state) => {
+    return state.userSlice.user;
+  });
   let renderCourseList = () => {
     return course?.slice(0, 8).map((item, index) => {
       return (
@@ -47,26 +53,25 @@ export default function CourseList({ course }) {
                 >
                   Xem Chi Tiết
                 </button>
-                {/* <button
+
+                <button
                   onClick={() => {
+                    let axiosArr = {
+                      maKhoaHoc: `${item.maKhoaHoc}`,
+                      taiKhoan: user.taiKhoan,
+                    };
                     postRegisterCourse(axiosArr)
                       .then((result) => {
                         message.success("Đăng Ký Khóa Học Thành Công");
                       })
                       .catch((err) => {
-                        message.err("Khóa Học Này Đã Đăng Ký");
-                        <Alert
-                          message="Warning"
-                          type="warning"
-                          showIcon
-                          closable
-                        />;
+                        console.log(err);
                       });
                   }}
                   class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Dang Ky
-                </button> */}
+                </button>
               </div>
             </div>
           </div>
@@ -76,7 +81,9 @@ export default function CourseList({ course }) {
   };
   return (
     <div>
-      <h1 className="container text-2xl font-bold uppercase m-6">khóa học phổ biến</h1>
+      <h1 className="container text-2xl font-bold uppercase m-6">
+        khóa học phổ biến
+      </h1>
       <div className="container grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
         <Fade duration={1000} triggerOnce direction="right">
           {renderCourseList()}
