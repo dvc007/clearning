@@ -22,7 +22,7 @@ export default function Header() {
         return (
           <div>
             <a
-              className=' uppercase block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"'
+              className=' uppercase block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-slate-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-slate-100 dark:border-gray-700"'
               target="_blank"
               rel="noopener noreferrer"
               href={`/khoahoc/${item.maDanhMuc}`}
@@ -39,7 +39,7 @@ export default function Header() {
   return (
     <div>
       <div className="w-full pt-11 mt-11">
-        <nav className="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+        <nav className="header">
           <div className="container flex flex-wrap items-center justify-between mx-auto">
             <a href="/#" className="flex items-center">
               <img
@@ -115,10 +115,10 @@ export default function Header() {
               </button>
             </div>
             <div
-              className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+              className="items-center  justify-between hidden w-full md:flex md:w-auto md:order-1"
               id="navbar-sticky"
             >
-              <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <ul className="flex flex-col p-4 mt-4 border  border-gray-100 rounded-lg bg-slate-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-slate-100 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
                   <a
                     href="/#"

@@ -40,16 +40,16 @@ export default function CourseList({ course }) {
                 </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                <span className="text-2xl font-bold text-gray-900 dark:text-white">
                   399.000<sup>đ</sup>
                 </span>
               </div>
-              <div>
+              <div className="flex gap-4 mt-5">
                 <button
                   onClick={() => {
                     window.location.href = `/detail/${item.maKhoaHoc}`;
                   }}
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Xem Chi Tiết
                 </button>
@@ -68,7 +68,7 @@ export default function CourseList({ course }) {
                         console.log(err);
                       });
                   }}
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Dang Ky
                 </button>
@@ -81,10 +81,8 @@ export default function CourseList({ course }) {
   };
   return (
     <div>
-      <h1 className="container text-2xl font-bold uppercase m-6">
-        khóa học phổ biến
-      </h1>
-      <div className="container grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+      <h2 className="font-bold uppercase m-6">khóa học phổ biến</h2>
+      <div className="grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <Fade duration={1000} triggerOnce direction="right">
           {renderCourseList()}
         </Fade>

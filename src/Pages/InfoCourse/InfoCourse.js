@@ -1081,7 +1081,6 @@ export default function InfoCourse() {
     <>
       <div className="bg-slate-100">{renderCourseList()}</div>
       <div className="my-5 ">
-        <h1 className="my-5 text-2xl font-bold">Khóa Học Phổ Biến</h1>
         <CourseList course={course} />
       </div>
     </>

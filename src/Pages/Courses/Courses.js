@@ -16,7 +16,6 @@ export default function Courses() {
   }, []);
   return (
     <div>
-      <h1>Danh sách khóa học phổ biến</h1>
       <CourseList course={course} />
     </div>
   );

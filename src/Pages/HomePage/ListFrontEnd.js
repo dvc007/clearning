@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { getCourseByCategoryFontend } from "./../../service/CourseService";
 import { Fade } from "react-awesome-reveal";
+import { message } from "antd";
+import { postRegisterCourse } from "./../../service/CourseService";
+import { useSelector } from "react-redux";
 
 export default function ListFrontEnd() {
+  let user = useSelector((state) => {
+    return state.userSlice.user;
+  });
   const [CourseByCategory, setCourseByCategory] = useState([]);
   useEffect(() => {
     getCourseByCategoryFontend()
@@ -47,18 +53,36 @@ export default function ListFrontEnd() {
                 </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                <span className="text-2xl font-bold text-gray-900 dark:text-white">
                   399.000<sup>đ</sup>
                 </span>
               </div>
-              <div>
+              <div className="flex gap-4 mt-5">
                 <button
                   onClick={() => {
                     window.location.href = `/detail/${item.maKhoaHoc}`;
                   }}
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Xem Chi Tiết
+                </button>
+                <button
+                  onClick={() => {
+                    let axiosArr = {
+                      maKhoaHoc: `${item.maKhoaHoc}`,
+                      taiKhoan: user.taiKhoan,
+                    };
+                    postRegisterCourse(axiosArr)
+                      .then((result) => {
+                        message.success("Đăng Ký Khóa Học Thành Công");
+                      })
+                      .catch((err) => {
+                        console.log(err);
+                      });
+                  }}
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Dang Ky
                 </button>
               </div>
             </div>
@@ -69,7 +93,7 @@ export default function ListFrontEnd() {
   };
   return (
     <>
-      <h1 className="text-2xl font-bold uppercase m-6">Khóa học Front End</h1>
+      <h2 className="font-bold uppercase m-6">Khóa học Front End</h2>
 
       <div className=" grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <Fade duration={1000} triggerOnce direction="right">

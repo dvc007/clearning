@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { getCourseByCategoryBackEnd } from "../../service/CourseService";
 import { Fade } from "react-awesome-reveal";
+import { postRegisterCourse } from "./../../service/CourseService";
+import { message } from "antd";
+import { useSelector } from "react-redux";
 
 export default function ListBackEnd() {
+  let user = useSelector((state) => {
+    return state.userSlice.user;
+  });
   const [CourseByCategory, setCourseByCategory] = useState([]);
   useEffect(() => {
     getCourseByCategoryBackEnd()
@@ -14,10 +20,11 @@ export default function ListBackEnd() {
         console.log(err);
       });
   }, []);
+
   let renderCourseList = () => {
     return CourseByCategory?.slice(0, 4).map((item, index) => {
       return (
-        <div className="container" key={index}>
+        <div className="" key={index}>
           <div className="container max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <img
               className="p-8 rounded-t-lg pt-6 h-60 object-cover"
@@ -27,8 +34,8 @@ export default function ListBackEnd() {
             <div className="px-5 pb-5">
               <a href={`/detail/${item.maKhoaHoc}`}>
                 <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  {item.tenKhoaHoc.length > 20
-                    ? item.tenKhoaHoc.substring(0, 20) + "..."
+                  {item.tenKhoaHoc.length > 15
+                    ? item.tenKhoaHoc.substring(0, 15) + "..."
                     : item.tenKhoaHoc}
                 </h5>
               </a>
@@ -47,18 +54,36 @@ export default function ListBackEnd() {
                 </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                <span className="text-2xl font-bold text-gray-900 dark:text-white">
                   399.000<sup>đ</sup>
                 </span>
               </div>
-              <div>
+              <div className="flex gap-4 mt-5">
                 <button
                   onClick={() => {
                     window.location.href = `/detail/${item.maKhoaHoc}`;
                   }}
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Xem Chi Tiết
+                </button>
+                <button
+                  onClick={() => {
+                    let axiosArr = {
+                      maKhoaHoc: `${item.maKhoaHoc}`,
+                      taiKhoan: user.taiKhoan,
+                    };
+                    postRegisterCourse(axiosArr)
+                      .then((result) => {
+                        message.success("Đăng Ký Khóa Học Thành Công");
+                      })
+                      .catch((err) => {
+                        console.log(err);
+                      });
+                  }}
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Dang Ky
                 </button>
               </div>
             </div>
@@ -69,9 +94,9 @@ export default function ListBackEnd() {
   };
   return (
     <>
-      <h1 className="container text-2xl font-bold uppercase m-6">Khóa học Back End</h1>
+      <h2 className="font-bold uppercase m-6">Khóa học Back End</h2>
 
-      <div className="container grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid mx-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <Fade duration={1000} triggerOnce direction="left">
           {renderCourseList()}
         </Fade>
