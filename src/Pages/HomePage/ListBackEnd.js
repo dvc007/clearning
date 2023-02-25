@@ -27,8 +27,8 @@ export default function ListBackEnd() {
         <div className="" key={index}>
           <div className="container max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <img
-              className="p-8 rounded-t-lg pt-6 h-60 object-cover"
-              src={item.hinhAnh}
+              className="p-8 rounded-t-lg pt-6 h-full object-cover"
+              src={require(`./../images/backend.png`)}
               alt="product"
             />
             <div className="px-5 pb-5">
@@ -89,6 +89,63 @@ export default function ListBackEnd() {
             </div>
           </div>
         </div>
+
+        /* <div className="mx-auto mt-11 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+            <img
+              className="h-40 w-full  object-center p-8 rounded-t-lg pt-6  object-cover"
+              src={item.hinhAnh}
+              alt="Product"
+            />
+            <div className="p-4">
+              <h2 className="mb-2 text-lg font-medium dark:text-white text-gray-900">
+                {item.tenKhoaHoc.length > 15
+                  ? item.tenKhoaHoc.substring(0, 15) + "..."
+                  : item.tenKhoaHoc}
+              </h2>
+              <p className="mb-2 text-base dark:text-gray-300 text-gray-700">
+                Product description goes here.
+              </p>
+              <div className="flex items-center">
+                <p className="mr-2 text-lg font-semibold text-gray-900 dark:text-white">
+                  $20.00
+                </p>
+                <p className="text-base  font-medium text-gray-500 line-through dark:text-gray-300">
+                  $25.00
+                </p>
+                <p className="ml-auto text-base font-medium text-green-500">
+                  20% off
+                </p>
+              </div>
+              <div className="flex gap-4 mt-5">
+                <button
+                  onClick={() => {
+                    window.location.href = `/detail/${item.maKhoaHoc}`;
+                  }}
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Xem Chi Tiết
+                </button>
+                <button
+                  onClick={() => {
+                    let axiosArr = {
+                      maKhoaHoc: `${item.maKhoaHoc}`,
+                      taiKhoan: user.taiKhoan,
+                    };
+                    postRegisterCourse(axiosArr)
+                      .then((result) => {
+                        message.success("Đăng Ký Khóa Học Thành Công");
+                      })
+                      .catch((err) => {
+                        console.log(err);
+                      });
+                  }}
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Dang Ky
+                </button>
+              </div>
+            </div>
+          </div> */
       );
     });
   };

@@ -97,7 +97,6 @@ function App() {
           {/* <Route path="/admin/delete/:taiKhoan" element={<AdminUserPage />} /> */}
         </Routes>
       </BrowserRouter>
-      <script src="../path/to/flowbite/dist/flowbite.min.js"></script>;
     </>
   );
 }

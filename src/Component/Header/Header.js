@@ -22,7 +22,7 @@ export default function Header() {
         return (
           <div>
             <a
-              className=' uppercase block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-slate-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-slate-100 dark:border-gray-700"'
+              className='uppercase block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-slate-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-slate-100 dark:border-gray-700"'
               target="_blank"
               rel="noopener noreferrer"
               href={`/khoahoc/${item.maDanhMuc}`}
@@ -122,7 +122,7 @@ export default function Header() {
                 <li>
                   <a
                     href="/#"
-                    className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                    className="block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
                     aria-current="page"
                   >
                     <Dropdown

@@ -26,8 +26,8 @@ export default function ListFrontEnd() {
         <div className="" key={index}>
           <div className="container max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <img
-              className="p-8 rounded-t-lg pt-6 h-60 object-cover"
-              src={item.hinhAnh}
+              className="p-8 rounded-t-lg pt-6 h-full object-cover"
+              src={require(`./../images/frontend.jpg`)}
               alt="product"
             />
             <div className="px-5 pb-5">
