@@ -21,9 +21,9 @@ export default function UserNav() {
           <span>Xin chào bạn {user?.hoTen}</span>
           <Dropdown
             trigger={["hover"]}
-            visible={showButtons}
-            onVisibleChange={(visible) => setShowButtons(visible)}
-            overlay={
+            open={showButtons}
+            onOpenChange={(open) => setShowButtons(open)}
+            menu={
               <Menu>
                 <Menu.Item>
                   <Button

@@ -13,7 +13,7 @@ export default function ListFrontEnd() {
   useEffect(() => {
     getCourseByCategoryFontend()
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         setCourseByCategory(result.data);
       })
       .catch((err) => {
@@ -62,7 +62,7 @@ export default function ListFrontEnd() {
                   onClick={() => {
                     window.location.href = `/detail/${item.maKhoaHoc}`;
                   }}
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Xem Chi Tiết
                 </button>
@@ -80,7 +80,7 @@ export default function ListFrontEnd() {
                         console.log(err);
                       });
                   }}
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Dang Ky
                 </button>

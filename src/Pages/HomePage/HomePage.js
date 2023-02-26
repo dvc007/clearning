@@ -13,7 +13,7 @@ export default function HomePage() {
   useEffect(() => {
     getCourse()
       .then((result) => {
-        console.log(result.data);
+        // console.log(result.data);
         setCourse(result.data);
       })
       .catch((err) => {
