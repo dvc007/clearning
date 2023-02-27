@@ -1,6 +1,10 @@
 import React from "react";
-
+import { setLoadingOff } from "./../redux_toolkit/loadingSlice";
+import { store_toolkit } from "./../index";
+import { Button } from "antd";
 export default function NotFoundPage() {
+  store_toolkit.dispatch(setLoadingOff());
+
   return (
     <div>
       <div className="flex items-center justify-center py-12">
@@ -19,6 +23,15 @@ export default function NotFoundPage() {
             <h1 className="px-4 pt-8 pb-4 text-center dark:text-white text-5xl font-bold leading-10 text-gray-800">
               OOPS!
             </h1>
+            <Button
+              onClick={() => {
+                window.location.href = "/";
+              }}
+              className="header-tailwin"
+              type="primary"
+            >
+              Quay Về Trang Chủ
+            </Button>
           </div>
         </div>
       </div>
