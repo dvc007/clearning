@@ -1,12 +1,12 @@
 import React from "react";
-
 import { postRegister } from "../../service/userService";
 import { useDispatch } from "react-redux";
 import { userLocalService } from "../../service/localService";
 import { Button, Form, Input, message, Select } from "antd";
 import { setUserInfo } from "../../redux_toolkit/userSlice";
 import { useNavigate } from "react-router-dom";
-
+import { store_toolkit } from "./../../index";
+import { setLoadingOff } from "./../../redux_toolkit/loadingSlice";
 const { Option } = Select;
 
 const formItemLayout = {
@@ -41,6 +41,7 @@ const tailFormItemLayout = {
 };
 
 export default function RegisterPage() {
+  store_toolkit.dispatch(setLoadingOff());
   const [form] = Form.useForm();
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -66,9 +67,9 @@ export default function RegisterPage() {
       })
       .catch((err) => {
         message.warning("ĐK That Bai");
-        console.log(err);
+        // console.log(err);
       });
-    console.log("Value ", values);
+    // console.log("Value ", values);
   };
 
   return (

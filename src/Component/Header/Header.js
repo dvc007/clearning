@@ -18,20 +18,21 @@ export default function Header() {
 
   const items = [
     {
-      label: category.map((item, index) => {
-        return (
-          <div>
+      label: (
+        <div>
+          {category.map((item, index) => (
             <a
               className='uppercase block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-slate-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-slate-100 dark:border-gray-700"'
               target="_blank"
               rel="noopener noreferrer"
               href={`/khoahoc/${item.maDanhMuc}`}
+              key={item.maDanhMuc}
             >
               {item.tenDanhMuc}
             </a>
-          </div>
-        );
-      }),
+          ))}
+        </div>
+      ),
       key: "0",
     },
   ];
@@ -89,6 +90,7 @@ export default function Header() {
                 </form>
               </div> */}
             </a>
+
             <div className="flex md:order-2 ">
               <UserNav />
               <button
@@ -140,27 +142,18 @@ export default function Header() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="/khoahoc"
-                    className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >
+                  <a href="/khoahoc" className="header-tailwind">
                     KHÓA HỌC
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="/event"
-                    className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >
+                  <a href="/event" className="header-tailwind">
                     BLOG
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="/about"
-                    className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >
+                  <a href="/about" className="header-tailwind">
                     VỀ CHÚNG TÔI
                   </a>
                 </li>

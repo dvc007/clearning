@@ -7,13 +7,18 @@ import { userLocalService } from "../../service/localService";
 import { useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import groovyWalkAnimation from "../../assets/login.json";
+import { store_toolkit } from "./../../index";
+import { setLoadingOff } from "./../../redux_toolkit/loadingSlice";
+
 export default function LoginPage() {
   let navigate = useNavigate();
   let dispatch = useDispatch();
+  store_toolkit.dispatch(setLoadingOff());
+
   const onFinish = (values) => {
     postLogin(values)
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         message.success("success login");
         dispatch(setUserInfo(result.data));
         userLocalService.set(result.data);

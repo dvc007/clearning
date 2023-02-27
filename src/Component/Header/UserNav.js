@@ -1,9 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { userLocalService } from "../../service/localService";
-import { Avatar, Button, Dropdown, Menu } from "antd";
+import { Button } from "antd";
 export default function UserNav() {
-  const [showButtons, setShowButtons] = React.useState(false);
   let user = useSelector((state) => {
     return state.userSlice.user;
   });
@@ -13,72 +12,58 @@ export default function UserNav() {
     window.location.href = "/";
     // window.location.reload()
   };
+
   const renderContent = () => {
     if (user) {
       //da dang nhap
       return (
-        <>
+        <React.Fragment>
           <span>Xin chào bạn {user?.hoTen}</span>
-          <Dropdown
-            trigger={["hover"]}
-            open={showButtons}
-            onOpenChange={(open) => setShowButtons(open)}
-            menu={
-              <Menu>
-                <Menu.Item>
-                  <Button
-                    onClick={handleLogout}
-                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
-                    type="primary"
-                  >
-                    Đăng Xuất
-                  </Button>
-                </Menu.Item>
-                <Menu.Item>
-                  <Button
-                    onClick={() => {
-                      window.location.href = "/capnhat";
-                    }}
-                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm   text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
-                    type="primary"
-                  >
-                    Cập Nhật Thông Tin
-                  </Button>
-                </Menu.Item>
-              </Menu>
-            }
+          <Button
+            onClick={handleLogout}
+            className="header-tailwin"
+            type="primary"
           >
-            <Avatar size={64} src={require("./avatar.jpg")} />
-          </Dropdown>
-        </>
+            Đăng Xuất
+          </Button>
+
+          <Button
+            onClick={() => {
+              window.location.href = "/capnhat";
+            }}
+            className="header-tailwin"
+            type="primary"
+          >
+            Cập Nhật Thông Tin
+          </Button>
+        </React.Fragment>
       );
     } else {
       return (
-        <div>
-          <button
+        <React.Fragment>
+          <Button
             onClick={() => {
               window.location.href = "/login";
             }}
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 mx-4 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
+            className="header-tailwin"
+            type="primary"
           >
             Đăng Nhập
-          </button>
-          <button
+          </Button>
+
+          <Button
             onClick={() => {
               window.location.href = "/register";
             }}
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 mx-4 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
+            className="header-tailwin"
+            type="primary"
           >
             Đăng Ký
-          </button>
-        </div>
+          </Button>
+        </React.Fragment>
       );
     }
   };
 
-  return (
-    <>
-      <div>{renderContent()}</div>
-    </>
-  );
+  return <div>{renderContent()}</div>;
 }
