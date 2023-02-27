@@ -63,7 +63,7 @@ export default function UserNav() {
                   href="/capnhat"
                   class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
-                  Setting
+                  Cập Nhật Thông Tin
                 </a>
               </li>
             </ul>
@@ -76,7 +76,7 @@ export default function UserNav() {
                 }}
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
               >
-                Sign out
+                Đăng Xuất
               </a>
             </div>
           </div>

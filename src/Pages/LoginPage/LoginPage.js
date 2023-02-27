@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, Input, message } from "antd";
+import { Button, Form, Input, message, Checkbox } from "antd";
 import { postLogin } from "./../../service/userService";
 import { useDispatch } from "react-redux";
 import { setUserInfo } from "../../redux_toolkit/userSlice";
@@ -9,6 +9,7 @@ import Lottie from "lottie-react";
 import groovyWalkAnimation from "../../assets/login.json";
 import { store_toolkit } from "./../../index";
 import { setLoadingOff } from "./../../redux_toolkit/loadingSlice";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
 
 export default function LoginPage() {
   let navigate = useNavigate();
@@ -30,66 +31,76 @@ export default function LoginPage() {
         console.log(err);
       });
   };
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
-  };
+  // const onFinishFailed = (errorInfo) => {
+  //   console.log("Failed:", errorInfo);
+  // };
   return (
-    <div className="flex justify-around gap-x-3">
-      <div className="w-2/5">
+    <div className="flex justify-around bg-slate-100 max-[640px]:bg-slate-300 max-[640px]:inline">
+      <div className="w-1/3 max-[640px]:mx-auto ">
         <Lottie animationData={groovyWalkAnimation} />
       </div>
-      <div className="flex items-center mr-60 ">
+      <div className="2xl:mt-20 xl:mt-20 lg:mt-10 md:mt-5 max-[640px]:mx-14 max-[640px]:mt-2">
         <Form
-          name="basic"
-          labelCol={{
-            span: 8,
-          }}
-          wrapperCol={{
-            span: 16,
-          }}
-          style={{
-            maxWidth: 600,
-          }}
+          labelCol={{ span: 10 }}
+          wrapperCol={{ span: 40 }}
+          name="normal_login"
+          className="login-form"
           initialValues={{
-            remember: true,
+            remember: false,
           }}
           onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
         >
           <Form.Item
-            label="Username"
             name="taiKhoan"
             rules={[
               {
                 required: true,
-                message: "Please input your username!",
+                message: "Vui lòng nhập tên người dùng của bạn!",
               },
             ]}
           >
-            <Input />
+            <Input
+              prefix={<UserOutlined className="site-form-item-icon" />}
+              placeholder="Tên tài khoản"
+            />
           </Form.Item>
-
           <Form.Item
-            label="Password"
             name="matKhau"
             rules={[
               {
                 required: true,
-                message: "Please input your password!",
+                message: "Vui lòng nhập mật khẩu của bạn!",
               },
             ]}
           >
-            <Input.Password />
+            <Input
+              prefix={<LockOutlined className="site-form-item-icon" />}
+              type="password"
+              placeholder="Mật khẩu"
+            />
+          </Form.Item>
+          <Form.Item>
+            <Form.Item name="remember" valuePropName="checked" noStyle>
+              <Checkbox>Nhớ tài khoản</Checkbox>
+            </Form.Item>
+            {/* <a className="login-form-forgot" href="/">
+            Đã quên mật khẩu?
+          </a> */}
           </Form.Item>
 
-          <Form.Item
-            wrapperCol={{
-              offset: 8,
-              span: 16,
-            }}
-          >
-            <Button htmlType="submit">Submit</Button>
+          <Form.Item>
+            <Button
+              // type="primary"
+              htmlType="submit"
+              className="login-form-button"
+            >
+              Đăng nhập
+            </Button>{" "}
+            <Button className="">
+              <span>
+                <a href="/register">Tạo tài khoản mới</a>
+              </span>
+            </Button>
           </Form.Item>
         </Form>
       </div>
