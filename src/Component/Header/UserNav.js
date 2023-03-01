@@ -42,7 +42,7 @@ export default function UserNav() {
             data-dropdown-toggle="userDropdown"
             data-dropdown-placement="bottom-start"
             class="w-10 h-10 rounded-full cursor-pointer"
-            src={require("./avatar.jpg")}
+            src={require("./image/avatar.jpg")}
             alt="User dropdown"
           />
 

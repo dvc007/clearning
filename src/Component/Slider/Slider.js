@@ -11,8 +11,12 @@ export default function Slider() {
       direction="down"
       className="flex flex-col justify-center items-center"
     >
-      <div className="grid w-full h-3/6 grid-cols-2 mt-2 pt-2 bg-red">
-        <div className="mt-28">
+      <div className="flex justify-around w-full h-3/6 max-[760px]:inline-block max-[760px]:-mt-28  mt-2 pt-2 bg-red ">
+        <div className="max-[760px]:order-2 max-[760px]:mt-24 order-1">
+          <Lottie animationData={groovyWalkAnimation} />
+        </div>
+
+        <div className="mt-28 ml-5 max-[760px]:mt-1">
           <div className="flex justify-center">
             <div className="block p-10 rounded-lg shadow-lg bg-white max-w-sm">
               <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">
@@ -39,10 +43,6 @@ export default function Slider() {
               </button>
             </div>
           </div>
-        </div>
-
-        <div>
-          <Lottie animationData={groovyWalkAnimation} />
         </div>
       </div>
     </Slide>
