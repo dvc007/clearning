@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Form, Input, message, Select } from "antd";
-import { postAddUser } from "./../../../service/amindService";
+import { postAddUser } from "./../../../service/admindService";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setUserInfo } from "../../../redux_toolkit/userSlice";

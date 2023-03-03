@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getCourse } from "./../../../service/CourseService";
 import { userColums } from "./utilsCourse";
 import { Table, message } from "antd";
-import { deleteUser } from "./../../../service/amindService";
+import { deleteUser } from "./../../../service/admindService";
 
 export default function ListCourseUserPage() {
   const [course, setCourse] = useState([]);
@@ -78,6 +78,11 @@ export default function ListCourseUserPage() {
   }, []);
   return (
     <div>
+      <div className="my-5">
+        <a href="/admin/addcourse" className="text-3xl">
+          Thêm Khóa Học Mới
+        </a>
+      </div>
       <Table columns={userColums} dataSource={course} />
     </div>
   );

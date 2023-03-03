@@ -18,6 +18,7 @@ import AddUserPage from "./Pages/AdminUserPage/AddUserPage/AddUserPage";
 import ListCourseUserPage from "./Pages/AdminUserPage/ListCourseUserPage/ListCourseUserPage";
 import UpdateUserPage from "./Pages/AdminUserPage/UpdateUserPage/UpdateUserPage";
 import Loading from "./Component/Loading/Loading";
+import AddCourseUserPage from "./Pages/AdminUserPage/AddCourseUserPage/AddCourseUserPage";
 function App() {
   return (
     <>
@@ -94,6 +95,8 @@ function App() {
             path="/admin/updateuser/:taiKhoan"
             element={<UpdateUserPage />}
           />
+          <Route path="/admin/addcourse" element={<AddCourseUserPage />} />
+
           {/* <Route path="/admin/delete/:taiKhoan" element={<AdminUserPage />} /> */}
         </Routes>
       </BrowserRouter>

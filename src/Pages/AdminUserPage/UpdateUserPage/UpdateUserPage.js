@@ -1,5 +1,5 @@
 import React from "react";
-import { putUpdateUser } from "./../../../service/amindService";
+import { putUpdateUser } from "./../../../service/admindService";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Form, Input, message, Select } from "antd";
 // import { useSelector } from "react-redux";
