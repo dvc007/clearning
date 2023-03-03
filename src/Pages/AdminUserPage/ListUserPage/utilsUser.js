@@ -17,11 +17,6 @@ export const userColums = [
     key: "email",
   },
   {
-    title: "Mật Khẩu",
-    dataIndex: "matKhau",
-    key: "matKhau",
-  },
-  {
     title: "Số Điện Thoại",
     dataIndex: "soDt",
     key: "soDt",

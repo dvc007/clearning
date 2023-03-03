@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Table, message } from "antd";
 import { deleteUser, getUserList } from "./../../../service/amindService";
 import { userColums } from "./utilsUser";
-import { userLocalAdmin } from "./../../../service/localService";
-export default function ListUserPage({ arrListUserC }) {
-  const UserUpdate = userLocalAdmin.get();
-  console.log("xx", UserUpdate);
+export default function ListUserPage({ props }) {
   const [userArr, setUserArr] = useState([]);
   useEffect(() => {
     let fetchUserList = () => {
@@ -22,17 +19,6 @@ export default function ListUserPage({ arrListUserC }) {
           });
       };
 
-      // const hanleUpdateUser = (dataUpdate) => {
-      //   putUpdateUser(dataUpdate)
-      //     .then((result) => {
-      //       message.success("Sửa Thành Công");
-      //       console.log(result);
-      //     })
-      //     .catch((err) => {
-      //       console.log(err);
-      //     });
-      // };
-
       getUserList()
         .then((result) => {
           let userList = result.data.map((item) => {
@@ -48,6 +34,7 @@ export default function ListUserPage({ arrListUserC }) {
                     >
                       Ghi Danh
                     </button>
+
                     <button
                       onClick={() => {
                         window.location.href = `/admin/updateuser/${item.taiKhoan}`;
@@ -57,6 +44,7 @@ export default function ListUserPage({ arrListUserC }) {
                     >
                       Sửa
                     </button>
+
                     <button
                       onClick={() => {
                         handleRemoveUser(item.taiKhoan);
@@ -71,8 +59,7 @@ export default function ListUserPage({ arrListUserC }) {
               ),
             };
           });
-          console.log(result);
-
+          console.log(result.data);
           setUserArr(userList);
         })
         .catch((err) => {

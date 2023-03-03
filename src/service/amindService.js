@@ -17,6 +17,6 @@ export const deleteUser = (datadelete) => {
   );
 };
 //cap nhat nguoi dung
-export const putUpdateUser = (dataupdate) => {
-  return https.put("/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung", dataupdate);
+export const putUpdateUser = (update) => {
+  return https.put("/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung", update);
 };

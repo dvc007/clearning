@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setUserInfo } from "../../../redux_toolkit/userSlice";
 import { userLocalService } from "../../../service/localService";
+import { setLoadingOff } from "./../../../redux_toolkit/loadingSlice";
+import { store_toolkit } from "./../../../index";
 
 const { Option } = Select;
 
@@ -39,6 +41,8 @@ const tailFormItemLayout = {
   },
 };
 export default function AddUserPage() {
+  store_toolkit.dispatch(setLoadingOff());
+
   const [form] = Form.useForm();
   let dispatch = useDispatch();
   let navigate = useNavigate();

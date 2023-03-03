@@ -2,9 +2,10 @@ import React from "react";
 import { putUpdateUser } from "./../../../service/amindService";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Form, Input, message, Select } from "antd";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { userLocalAdmin } from "../../../service/localService";
-
+import { store_toolkit } from "./../../../index";
+import { setLoadingOff } from "./../../../redux_toolkit/loadingSlice";
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -37,26 +38,15 @@ const tailFormItemLayout = {
 };
 const { Option } = Select;
 
-export default function UpdateUserPage() {
+export default function UpdateUserPage(props) {
+  store_toolkit.dispatch(setLoadingOff());
+  console.log("props", props);
   const [form] = Form.useForm();
   const UserUpdate = userLocalAdmin.get();
   console.log(UserUpdate);
   let params = useParams();
   let navigate = useNavigate();
-  let user = useSelector((state) => {
-    return state.userSlice.user;
-  });
 
-  let arrList = {
-    taiKhoan: user.taiKhoan,
-    matKhau: user.matKhau,
-    hoTen: user.hoTen,
-    soDT: user.soDT,
-    maLoaiNguoiDung: user.maLoaiNguoiDung,
-    maNhom: user.maNhom,
-    email: user.email,
-  };
-  console.log("IP", arrList);
   const onFinish = (values) => {
     putUpdateUser(values)
       .then((result) => {
@@ -81,7 +71,7 @@ export default function UpdateUserPage() {
         </div> */}
         <div className="flex items-center mr-60 ">
           <Form
-            initialValues={user}
+            initialValues={params}
             {...formItemLayout}
             form={form}
             name="register"

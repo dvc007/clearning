@@ -31,9 +31,7 @@ export default function LoginPage() {
         console.log(err);
       });
   };
-  // const onFinishFailed = (errorInfo) => {
-  //   console.log("Failed:", errorInfo);
-  // };
+
   return (
     <div className="flex justify-around bg-slate-100 max-[640px]:bg-slate-300 max-[640px]:inline">
       <div className="w-1/3 max-[640px]:mx-auto ">
