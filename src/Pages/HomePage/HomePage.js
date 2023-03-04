@@ -7,6 +7,7 @@ import InforitemContent from "./InforitemContent";
 import OutTeam from "./OutTeam";
 import ListBackEnd from "./ListBackEnd";
 import ListFrontEnd from "./ListFrontEnd";
+import News from "./News";
 
 export default function HomePage() {
   const [course, setCourse] = useState([]);
@@ -29,6 +30,7 @@ export default function HomePage() {
       <ListFrontEnd />
       <CountNumber />
       <OutTeam />
+      <News />
     </div>
   );
 }
