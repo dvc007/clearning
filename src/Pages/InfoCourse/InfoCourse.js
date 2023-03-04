@@ -7,7 +7,6 @@ import { getCourse } from "./../../service/CourseService";
 export default function InfoCourse() {
   let params = useParams();
   const [Infocourse, setInfocourse] = useState([]);
-  console.log("DATA", Infocourse);
   let { hinhAnh, biDanh } = Infocourse;
   useEffect(() => {
     getInforCourse(params.maKhoaHoc)
@@ -23,7 +22,6 @@ export default function InfoCourse() {
   useEffect(() => {
     getCourse()
       .then((result) => {
-        console.log(result.data);
         setCourse(result.data);
       })
       .catch((err) => {
@@ -33,7 +31,7 @@ export default function InfoCourse() {
 
   let renderCourseList = () => {
     return (
-      <div className="grid grid-cols-3 gap-4 h-3/5 bg-slate-100 ">
+      <div className="container mx-auto  grid grid-cols-3 gap-4 h-full bg-slate-100 -mt-4 max-[767px]:block  ">
         <div className="col-span-2 ">
           <div className="mt-3">
             <h1 className="text-3xl font-bold uppercase">{biDanh}</h1>
@@ -1026,61 +1024,25 @@ export default function InfoCourse() {
                   />
                 </svg>
               </a>
-              <p class="text-xl mt-6  dark:text-white">
+              <p className="text-xl mt-6  dark:text-white">
                 Ghi danh: 25 học viên{" "}
               </p>
-              <p class="text-xl mt-6  dark:text-white">Thời gian: 20 giờ</p>
-              <p class="text-xl mt-6  dark:text-white">Bài học: 22</p>
-              <p class="text-xl mt-6  dark:text-white">Video: 98</p>
-              <p class="text-xl mt-6  dark:text-white">
+              <p className="text-xl mt-6  dark:text-white">Thời gian: 20 giờ</p>
+              <p className="text-xl mt-6  dark:text-white">Bài học: 22</p>
+              <p className="text-xl mt-6  dark:text-white">Video: 98</p>
+              <p className="text-xl mt-6  dark:text-white">
                 Trình độ: Người mới học
               </p>
             </div>
           </div>
-
-          {/* <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <NavLink to="//#">
-              <img
-                className="p-8 rounded-t-lg pt-6 h-96 object-cover"
-                src={hinhAnh}
-                alt="product"
-              />
-            </NavLink>
-            <div className="px-5 pb-5">
-              <NavLink to="/#">
-                <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  {biDanh}
-                </h5>
-              </NavLink>
-              <div className="flex items-center mt-2.5 mb-5">
-                <svg
-                  aria-hidden="true"
-                  className="w-5 h-5 text-yellow-300"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <title>Fifth star</title>
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
-                  5.0
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                  399.000<sup>đ</sup>
-                </span>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     );
   };
   return (
     <>
-      <div className="bg-slate-100">{renderCourseList()}</div>
-      <div className="my-5 ">
+      <div className="bg-slate-100 ">{renderCourseList()}</div>
+      <div className="my-5 max-[767px]:order-1 ">
         <CourseList course={course} />
       </div>
     </>
