@@ -19,6 +19,7 @@ import ListCourseUserPage from "./Pages/AdminUserPage/ListCourseUserPage/ListCou
 import UpdateUserPage from "./Pages/AdminUserPage/UpdateUserPage/UpdateUserPage";
 import Loading from "./Component/Loading/Loading";
 import AddCourseUserPage from "./Pages/AdminUserPage/AddCourseUserPage/AddCourseUserPage";
+import UpdateCoursePage from "./Pages/AdminUserPage/UpdateCoursePage/UpdateCoursePage";
 function App() {
   return (
     <>
@@ -94,6 +95,10 @@ function App() {
           <Route
             path="/admin/updateuser/:taiKhoan"
             element={<UpdateUserPage />}
+          />
+          <Route
+            path="/admin/update/:maKhoaHoc"
+            element={<UpdateCoursePage />}
           />
           <Route path="/admin/addcourse" element={<AddCourseUserPage />} />
 

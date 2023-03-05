@@ -20,3 +20,14 @@ export const deleteUser = (datadelete) => {
 export const putUpdateUser = (update) => {
   return https.put("/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung", update);
 };
+
+//Xoa Khoa Hoc
+
+export const deleteCourse = (MaKhoaHoc) => {
+  return https.delete(`/api/QuanLyKhoaHoc/XoaKhoaHoc?maKhoaHoc=${MaKhoaHoc}`);
+};
+
+//Cap nhat Khoa Hoc
+export const putUpdateCourse = (updateCourse) => {
+  return https.put("/api/QuanLyKhoaHoc/CapNhatKhoaHoc", updateCourse);
+};

@@ -6,6 +6,8 @@ import { Button, Form, Input, message, Select } from "antd";
 import { userLocalAdmin } from "../../../service/localService";
 import { store_toolkit } from "./../../../index";
 import { setLoadingOff } from "./../../../redux_toolkit/loadingSlice";
+import Lottie from "lottie-react";
+import groovyWalkAnimation from "../../../assets/update.json";
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -40,7 +42,6 @@ const { Option } = Select;
 
 export default function UpdateUserPage(props) {
   store_toolkit.dispatch(setLoadingOff());
-  console.log("props", props);
   const [form] = Form.useForm();
   const UserUpdate = userLocalAdmin.get();
   console.log(UserUpdate);
@@ -61,14 +62,13 @@ export default function UpdateUserPage(props) {
       });
     console.log("Value ");
   };
-  console.log("parm", params);
 
   return (
     <div>
-      <div className="flex justify-around gap-x-3">
-        {/* <div className="w-2/5">
-          <Lottie animationData={groovyWalkAnimation} />
-        </div> */}
+      <div className="flex justify-around bg-slate-100 max-[640px]:bg-slate-300 max-[640px]:inline">
+        <div className="w-2/5">
+          <Lottie animationData={groovyWalkAnimation} />x
+        </div>
         <div className="flex items-center mr-60 ">
           <Form
             initialValues={params}
@@ -90,7 +90,7 @@ export default function UpdateUserPage(props) {
                 },
               ]}
             >
-              <Input />
+              <Input disabled />
             </Form.Item>
 
             <Form.Item
@@ -172,7 +172,7 @@ export default function UpdateUserPage(props) {
             </Form.Item>
             <Form.Item
               name="maLoaiNguoiDung"
-              label="Mã Loại Người Dùng "
+              label="Mã Người Dùng"
               rules={[
                 {
                   required: true,
